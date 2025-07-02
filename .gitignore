@@ -1,0 +1,18 @@
+# Ignore Gradle cache and build folders
+.gradle/
+build/
+*/build/
+
+# Ignore IDE settings
+.idea/
+*.iml
+
+# Ignore local config
+local.properties
+
+# Ignore shell scripts and temporary files
+*.sh
+
+# Ignore anything not needed
+*.zip
+*.apk

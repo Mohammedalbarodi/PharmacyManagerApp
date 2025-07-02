@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="إضافة مصروف جديد"
+            android:textSize="22sp"
+            android:textColor="#0288D1"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etExpenseTitle"
+            android:hint="عنوان المصروف"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text" />
+
+        <EditText
+            android:id="@+id/etExpenseAmount"
+            android:hint="المبلغ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnSaveExpense"
+            android:text="حفظ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0288D1"
+            android:textColor="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

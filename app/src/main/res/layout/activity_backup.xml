@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="نسخ احتياطي للبيانات"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#039BE5"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btnBackup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="تنفيذ النسخ الاحتياطي"
+        android:backgroundTint="#03A9F4"
+        android:textColor="#FFFFFF"
+        android:padding="14dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnRestore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="استعادة النسخة الاحتياطية"
+        android:backgroundTint="#0288D1"
+        android:textColor="#FFFFFF"
+        android:padding="14dp" />
+
+</LinearLayout>
