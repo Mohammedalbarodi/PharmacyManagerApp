@@ -6,7 +6,7 @@ import com.mohammedalbarodi.pharmacymanagerapp.data.model.User
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUser(user: User)
+    suspend fun insertUser(user: User): Long
 
     @Query("SELECT * FROM users WHERE username = :username AND password = :password LIMIT 1")
     suspend fun login(username: String, password: String): User?
