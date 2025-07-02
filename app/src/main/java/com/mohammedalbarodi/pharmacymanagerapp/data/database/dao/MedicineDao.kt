@@ -9,10 +9,10 @@ interface MedicineDao {
     suspend fun insertMedicine(medicine: Medicine): Long
 
     @Update
-    suspend fun updateMedicine(medicine: Medicine)
+    suspend fun updateMedicine(medicine: Medicine): Int
 
     @Delete
-    suspend fun deleteMedicine(medicine: Medicine)
+    suspend fun deleteMedicine(medicine: Medicine): Int
 
     @Query("SELECT * FROM medicines")
     suspend fun getAllMedicines(): List<Medicine>
