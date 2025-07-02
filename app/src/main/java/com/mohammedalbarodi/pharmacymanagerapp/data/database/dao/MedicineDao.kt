@@ -1,7 +1,7 @@
 package com.mohammedalbarodi.pharmacymanagerapp.data.database.dao
 
 import androidx.room.*
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.model.Medicine
+import com.mohammedalbarodi.pharmacymanagerapp.data.model.Medicine
 
 @Dao
 interface MedicineDao {
