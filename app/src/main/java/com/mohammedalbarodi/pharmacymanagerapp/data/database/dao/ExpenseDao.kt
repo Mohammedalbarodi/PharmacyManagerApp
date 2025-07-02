@@ -1,7 +1,5 @@
-package com.mohammedalbarodi.pharmacymanagerapp.data.database.dao
-
 import androidx.room.*
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.model.Expense
+import com.mohammedalbarodi.pharmacymanagerapp.data.model.Expense
 
 @Dao
 interface ExpenseDao {
