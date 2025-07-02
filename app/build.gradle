@@ -9,7 +9,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId 'com.pharmacy.manager' // ضروري لكن سيُستخدم فقط لأغراض الـ packaging
+        applicationId 'com.pharmacy.manager'
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -28,6 +28,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 }
 
