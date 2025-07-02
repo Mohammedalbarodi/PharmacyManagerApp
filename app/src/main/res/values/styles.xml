@@ -1,0 +1,13 @@
+<resources>
+    <style name="Theme.PharmacyManagerApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- الألوان الرئيسية -->
+        <item name="colorPrimary">#03A9F4</item>
+        <item name="colorPrimaryVariant">#0288D1</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#B3E5FC</item>
+        <item name="colorSecondaryVariant">#81D4FA</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="android:statusBarColor">#0288D1</item>
+        <item name="android:navigationBarColor">#0288D1</item>
+    </style>
+</resources>
