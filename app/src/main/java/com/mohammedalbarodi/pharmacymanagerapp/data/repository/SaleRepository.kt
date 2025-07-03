@@ -2,7 +2,7 @@ package com.mohammedalbarodi.pharmacymanagerapp.data.repository
 
 import androidx.lifecycle.LiveData
 import com.mohammedalbarodi.pharmacymanagerapp.data.database.dao.SaleDao
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.model.Sale
+import com.mohammedalbarodi.pharmacymanagerapp.data.model.Sale
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
