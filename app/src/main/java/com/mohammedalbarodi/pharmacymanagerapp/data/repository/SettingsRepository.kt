@@ -1,7 +1,7 @@
 package com.mohammedalbarodi.pharmacymanagerapp.data.repository
 
 import com.mohammedalbarodi.pharmacymanagerapp.data.database.dao.SettingsDao
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.model.Settings
+import com.mohammedalbarodi.pharmacymanagerapp.data.model.Settings
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
