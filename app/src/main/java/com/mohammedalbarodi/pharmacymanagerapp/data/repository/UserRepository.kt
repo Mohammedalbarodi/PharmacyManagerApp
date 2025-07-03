@@ -1,7 +1,7 @@
 package com.mohammedalbarodi.pharmacymanagerapp.data.repository
 
 import com.mohammedalbarodi.pharmacymanagerapp.data.database.dao.UserDao
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.model.User
+import com.mohammedalbarodi.pharmacymanagerapp.data.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
