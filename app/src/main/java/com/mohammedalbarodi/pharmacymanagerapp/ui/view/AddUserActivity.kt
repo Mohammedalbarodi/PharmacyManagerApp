@@ -20,7 +20,7 @@ class AddUserActivity : AppCompatActivity() {
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
         etConfirmPassword = findViewById(R.id.etConfirmPassword)
-        btnSave = findViewById(R.id.btnSave)
+        btnSave = findViewById(R.id.btnAddUser)
 
         btnSave.setOnClickListener {
             saveUser()
