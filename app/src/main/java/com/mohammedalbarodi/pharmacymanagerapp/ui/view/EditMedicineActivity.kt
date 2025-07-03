@@ -5,13 +5,23 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.mohammedalbarodi.pharmacymanagerapp.databinding.ActivityEditMedicineBinding
+import com.mohammedalbarodi.pharmacymanagerapp.data.database.AppDatabase
 import com.mohammedalbarodi.pharmacymanagerapp.data.model.Medicine
+import com.mohammedalbarodi.pharmacymanagerapp.data.repository.MedicineRepository
 import com.mohammedalbarodi.pharmacymanagerapp.ui.viewmodel.MedicineViewModel
+import com.mohammedalbarodi.pharmacymanagerapp.ui.viewmodel.MedicineViewModelFactory
 
 class EditMedicineActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditMedicineBinding
-    private val viewModel: MedicineViewModel by viewModels()
+
+    // إنشاء الـ ViewModel باستخدام Factory مخصص
+    private val viewModel: MedicineViewModel by viewModels {
+        val medicineDao = AppDatabase.getDatabase(applicationContext).medicineDao()
+        val medicineRepository = MedicineRepository(medicineDao)
+        MedicineViewModelFactory(medicineRepository)
+    }
+
     private var currentMedicine: Medicine? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
