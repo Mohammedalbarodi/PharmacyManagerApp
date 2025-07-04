@@ -21,7 +21,7 @@ class SettingsActivity : AppCompatActivity() {
 
         btnChangePassword.setOnClickListener {
             // لاحقًا: افتح واجهة تغيير كلمة المرور
-            startActivity(Intent(this, ChangePasswordActivity::class.java))
+            // startActivity(Intent(this, ChangePasswordActivity::class.java))
         }
 
         btnLogout.setOnClickListener {
@@ -41,7 +41,6 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun performLogout() {
-        // لاحقًا: يمكن مسح الجلسة أو معلومات المستخدم
         val intent = Intent(this, LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
