@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class MedicineViewModel(private val medicineRepository: MedicineRepository) : ViewModel() {
 
     private val _medicines = MutableLiveData<List<Medicine>>()
-    val medicines: LiveData<List<Medicine>> get() = _medicines
+    val medicines: LiveData<List<Medicine>> = medicineRepository.allMedicines
 
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> get() = _errorMessage
