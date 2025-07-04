@@ -10,7 +10,6 @@ class BackupRepository(private val context: Context) {
 
     /**
      * وظيفة تقوم بعمل نسخة احتياطية لقاعدة البيانات في مجلد خارجي
-     * يمكنك تعديل المسار لاحقًا حسب الحاجة
      */
     fun backupDatabase(databaseName: String = "pharmacy_db"): Boolean {
         val dbFile = context.getDatabasePath(databaseName)
@@ -38,6 +37,39 @@ class BackupRepository(private val context: Context) {
             output.close()
 
             true
+        } catch (e: IOException) {
+            e.printStackTrace()
+            false
+        }
+    }
+
+    /**
+     * وظيفة تقوم باستعادة قاعدة البيانات من النسخة الاحتياطية
+     */
+    fun restoreDatabase(databaseName: String = "pharmacy_db"): Boolean {
+        val dbFile = context.getDatabasePath(databaseName)
+        val backupFile = File(Environment.getExternalStorageDirectory(), "PharmacyBackup/$databaseName.bak")
+
+        return try {
+            if (backupFile.exists()) {
+                val input = backupFile.inputStream()
+                val output = FileOutputStream(dbFile)
+
+                val buffer = ByteArray(1024)
+                var length: Int
+
+                while (input.read(buffer).also { length = it } > 0) {
+                    output.write(buffer, 0, length)
+                }
+
+                input.close()
+                output.flush()
+                output.close()
+
+                true
+            } else {
+                false
+            }
         } catch (e: IOException) {
             e.printStackTrace()
             false
