@@ -9,20 +9,20 @@ import com.mohammedalbarodi.pharmacymanagerapp.R
 
 class SettingsActivity : AppCompatActivity() {
 
-    private lateinit var btnChangePassword: Button
+    // private lateinit var btnChangePassword: Button
     private lateinit var btnLogout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        btnChangePassword = findViewById(R.id.btnChangePassword)
+        // btnChangePassword = findViewById(R.id.btnChangePassword)
         btnLogout = findViewById(R.id.btnLogout)
 
-        btnChangePassword.setOnClickListener {
-            // لاحقًا: افتح واجهة تغيير كلمة المرور
-            // startActivity(Intent(this, ChangePasswordActivity::class.java))
-        }
+        // btnChangePassword.setOnClickListener {
+        //     // لاحقًا: افتح واجهة تغيير كلمة المرور
+        //     // startActivity(Intent(this, ChangePasswordActivity::class.java))
+        // }
 
         btnLogout.setOnClickListener {
             confirmLogout()
