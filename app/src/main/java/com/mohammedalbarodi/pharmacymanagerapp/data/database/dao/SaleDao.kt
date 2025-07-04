@@ -1,5 +1,6 @@
-import androidx.lifecycle.LiveData
 package com.mohammedalbarodi.pharmacymanagerapp.data.database.dao
+
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.mohammedalbarodi.pharmacymanagerapp.data.model.Sale
 
