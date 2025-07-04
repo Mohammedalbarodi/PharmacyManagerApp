@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class SalesViewModel(private val salesRepository: SalesRepository) : ViewModel() {
 
     private val _sales = MutableLiveData<List<Sale>>()
-    val sales: LiveData<List<Sale>> get() = _sales
+    val sales: LiveData<List<Sale>> = salesRepository.allSales
 
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> get() = _errorMessage
