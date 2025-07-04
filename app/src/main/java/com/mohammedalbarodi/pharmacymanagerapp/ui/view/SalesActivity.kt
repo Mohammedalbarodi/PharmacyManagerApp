@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohammedalbarodi.pharmacymanagerapp.databinding.ActivitySalesBinding
+import com.mohammedalbarodi.pharmacymanagerapp.data.model.Sale
 import com.mohammedalbarodi.pharmacymanagerapp.ui.adapter.SalesAdapter
 import com.mohammedalbarodi.pharmacymanagerapp.ui.viewmodel.SalesViewModel
 
@@ -24,21 +25,23 @@ class SalesActivity : AppCompatActivity() {
         observeViewModel()
 
         binding.btnAddSale.setOnClickListener {
-            // هنا ستتم إضافة منطق إضافة بيع جديد لاحقًا
             Toast.makeText(this, "ميزة إضافة بيع قيد التطوير", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun setupRecyclerView() {
-        salesAdapter = SalesAdapter()
-        binding.recyclerViewSales.apply {
+        salesAdapter = SalesAdapter { sale: Sale ->
+            Toast.makeText(this, "تم اختيار البيع رقم ${sale.id}", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.salesList.apply {
             layoutManager = LinearLayoutManager(this@SalesActivity)
             adapter = salesAdapter
         }
     }
 
     private fun observeViewModel() {
-        viewModel.salesList.observe(this) { sales ->
+        viewModel.sales.observe(this) { sales ->
             salesAdapter.submitList(sales)
         }
     }
