@@ -20,4 +20,8 @@ interface SaleDao {
 
     @Query("SELECT * FROM sales WHERE date BETWEEN :startDate AND :endDate ORDER BY date ASC")
     fun getSalesBetween(startDate: Long, endDate: Long): LiveData<List<Sale>>
+
+    @Query("SELECT SUM(totalPrice) FROM sales")
+    suspend fun getTotalSalesAmount(): Double
+    
 }
