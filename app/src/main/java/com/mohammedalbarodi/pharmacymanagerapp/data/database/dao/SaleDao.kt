@@ -8,6 +8,6 @@ interface SaleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertSale(sale: Sale): Long
 
-    @Query("SELECT * FROM sales")
-    suspend fun getAllSales(): List<Sale>
+    @Query("SELECT * FROM sales ORDER BY date DESC")
+    fun getAllSales(): LiveData<List<Sale>>
 }
