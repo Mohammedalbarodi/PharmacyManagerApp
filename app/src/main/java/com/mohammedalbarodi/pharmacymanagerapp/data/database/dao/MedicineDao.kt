@@ -15,6 +15,9 @@ interface MedicineDao {
     @Delete
     suspend fun deleteMedicine(medicine: Medicine): Int
 
-   @Query("SELECT * FROM medicines ORDER BY name ASC")
+    @Query("SELECT * FROM medicines ORDER BY name ASC")
     fun getAllMedicines(): LiveData<List<Medicine>>
+
+    @Query("SELECT * FROM medicines WHERE name LIKE :query ORDER BY name ASC")
+    fun searchMedicines(query: String): LiveData<List<Medicine>>
 }
