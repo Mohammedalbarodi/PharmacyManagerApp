@@ -6,7 +6,7 @@ import com.mohammedalbarodi.pharmacymanagerapp.data.model.Sale
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class SaleRepository(private val saleDao: SaleDao) {
+class SalesRepository(private val saleDao: SaleDao) {
 
     val allSales: LiveData<List<Sale>> = saleDao.getAllSales()
 
