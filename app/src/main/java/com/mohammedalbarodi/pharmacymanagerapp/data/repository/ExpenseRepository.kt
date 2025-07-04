@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
 
 class ExpenseRepository(private val expenseDao: ExpenseDao) {
 
-    val allExpenses: LiveData<List<Expense>> = expenseDao.getAllExpenses()
+    val expenses: LiveData<List<Expense>> = expenseRepository.allExpenses
 
     suspend fun insertExpense(expense: Expense) {
         withContext(Dispatchers.IO) {
