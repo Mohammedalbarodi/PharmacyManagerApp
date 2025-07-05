@@ -4,14 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mohammedalbarodi.pharmacymanagerapp.R
 import com.mohammedalbarodi.pharmacymanagerapp.data.model.Medicine
 
 class MedicineAdapter(
-    private var medicinesList: List<Medicine>,
     private val onItemClick: ((Medicine) -> Unit)? = null
-) : RecyclerView.Adapter<MedicineAdapter.MedicineViewHolder>() {
+) : ListAdapter<Medicine, MedicineAdapter.MedicineViewHolder>(MedicineDiffCallback()) {
 
     inner class MedicineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvName: TextView = itemView.findViewById(R.id.tvMedicineName)
@@ -21,7 +22,8 @@ class MedicineAdapter(
 
         init {
             itemView.setOnClickListener {
-                onItemClick?.invoke(medicinesList[adapterPosition])
+                val medicine = getItem(adapterPosition)
+                onItemClick?.invoke(medicine)
             }
         }
     }
@@ -32,17 +34,20 @@ class MedicineAdapter(
     }
 
     override fun onBindViewHolder(holder: MedicineViewHolder, position: Int) {
-        val medicine = medicinesList[position]
+        val medicine = getItem(position)
         holder.tvName.text = medicine.name
         holder.tvCompany.text = medicine.company
         holder.tvPrice.text = String.format("%.2f", medicine.price)
         holder.tvQuantity.text = medicine.quantity.toString()
     }
 
-    override fun getItemCount(): Int = medicinesList.size
+    class MedicineDiffCallback : DiffUtil.ItemCallback<Medicine>() {
+        override fun areItemsTheSame(oldItem: Medicine, newItem: Medicine): Boolean {
+            return oldItem.id == newItem.id
+        }
 
-    fun updateData(newMedicines: List<Medicine>) {
-        medicinesList = newMedicines
-        notifyDataSetChanged()
+        override fun areContentsTheSame(oldItem: Medicine, newItem: Medicine): Boolean {
+            return oldItem == newItem
+        }
     }
 }
