@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/tvSaleMedicineName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="اسم الدواء"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSaleQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="الكمية"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvSaleTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="السعر الإجمالي"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvSaleDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="التاريخ"
+        android:textSize="12sp"
+        android:textColor="#888888" />
+</LinearLayout>
