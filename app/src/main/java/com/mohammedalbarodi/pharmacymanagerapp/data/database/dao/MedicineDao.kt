@@ -20,4 +20,7 @@ interface MedicineDao {
 
     @Query("SELECT * FROM medicines WHERE name LIKE :query ORDER BY name ASC")
     fun searchMedicines(query: String): LiveData<List<Medicine>>
+
+    @Query("SELECT * FROM medicines WHERE id = :id")
+    suspend fun getMedicineById(id: Int): Medicine?
 }
