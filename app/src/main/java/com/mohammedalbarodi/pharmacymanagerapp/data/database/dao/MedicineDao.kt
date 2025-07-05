@@ -23,4 +23,7 @@ interface MedicineDao {
 
     @Query("SELECT * FROM medicines WHERE id = :id")
     fun observeMedicineById(id: Int): LiveData<Medicine?>
+
+    @Query("SELECT * FROM medicines WHERE id = :id")
+    suspend fun getMedicineById(id: Int): Medicine?
 }
