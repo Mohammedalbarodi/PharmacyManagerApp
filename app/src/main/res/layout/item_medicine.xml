@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/tvMedicineName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="اسم الدواء"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#212121" />
+
+    <TextView
+        android:id="@+id/tvMedicineCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="الشركة المصنعة"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/tvMedicinePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="السعر: 0.00"
+        android:textSize="14sp"
+        android:textColor="#424242"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/tvMedicineQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="الكمية: 0"
+        android:textSize="14sp"
+        android:textColor="#424242"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>
