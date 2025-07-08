@@ -1,3 +1,8 @@
+package com.mohammedalbarodi.pharmacymanager.data.model
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 @Entity(tableName = "medicines")
 data class Medicine(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
