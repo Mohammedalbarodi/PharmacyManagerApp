@@ -1,43 +1,56 @@
-package com.mohammedalbarodi.pharmacymanagerapp.data.database
-import androidx.lifecycle.LiveData
-import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.dao.ExpenseDao
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.dao.MedicineDao
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.dao.SaleDao
-import com.mohammedalbarodi.pharmacymanagerapp.data.database.dao.UserDao
-import com.mohammedalbarodi.pharmacymanagerapp.data.model.Expense
-import com.mohammedalbarodi.pharmacymanagerapp.data.model.Medicine
-import com.mohammedalbarodi.pharmacymanagerapp.data.model.Sale
-import com.mohammedalbarodi.pharmacymanagerapp.data.model.User
-
 @Database(
-    entities = [Medicine::class, Expense::class, Sale::class, User::class],
+    entities = [
+        Medicine::class,
+        MedicineCategory::class,
+        Sale::class,
+        SaleItem::class,
+        Return::class,
+        Supplier::class,
+        PurchaseInvoice::class,
+        PurchaseItem::class,
+        Customer::class,
+        Prescription::class,
+        PrescriptionItem::class,
+        Expense::class,
+        User::class,
+        Notification::class,
+        BackupLog::class,
+        StockTransaction::class,
+        PaymentMethod::class,
+        Settings::class
+    ],
     version = 1,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
+    // DAO interfaces
     abstract fun medicineDao(): MedicineDao
-    abstract fun expenseDao(): ExpenseDao
     abstract fun saleDao(): SaleDao
+    abstract fun returnDao(): ReturnDao
+    abstract fun supplierDao(): SupplierDao
+    abstract fun purchaseDao(): PurchaseDao
+    abstract fun customerDao(): CustomerDao
+    abstract fun prescriptionDao(): PrescriptionDao
+    abstract fun expenseDao(): ExpenseDao
     abstract fun userDao(): UserDao
+    abstract fun notificationDao(): NotificationDao
+    abstract fun backupDao(): BackupLogDao
+    abstract fun stockDao(): StockTransactionDao
+    abstract fun paymentDao(): PaymentMethodDao
+    abstract fun settingsDao(): SettingsDao
 
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        fun getDatabase(context: Context): AppDatabase {
+        fun getInstance(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
+                Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "pharmacy_db"
-                ).build()
-                INSTANCE = instance
-                instance
+                    "pharmacy.db"
+                ).build().also { INSTANCE = it }
             }
         }
     }
